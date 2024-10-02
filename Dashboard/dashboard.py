@@ -5,8 +5,6 @@ import streamlit as st
 from babel.numbers import format_currency
 sns.set(style='dark')
 
-# Helper function yang dibutuhkan untuk menyiapkan berbagai dataframe
-
 
 def create_average_order_value_by_location_df(df):
     average_order_value_by_location = df.groupby(['customer_zip_code_prefix', 'customer_city', 'customer_state'])['price'].mean().reset_index()
@@ -40,9 +38,9 @@ def create_average_category_sales_df(df):
 
 def create_rfm_df(df):
     rfm_df = all_df.groupby(by="customer_id", as_index=False).agg({
-    "order_purchase_timestamp": "max", # mengambil tanggal order terakhir
-    "order_id": "nunique", # menghitung jumlah order
-    "price": "sum" # menghitung jumlah revenue yang dihasilkan
+    "order_purchase_timestamp": "max", 
+    "order_id": "nunique", 
+    "price": "sum"
     })
     rfm_df.columns = ["customer_id", "max_order_timestamp", "frequency", "monetary"]
     
@@ -69,8 +67,8 @@ min_date = all_df["order_purchase_timestamp"].min()
 max_date = all_df["order_purchase_timestamp"].max()
 
 with st.sidebar:
-    # Menambahkan logo perusahaan
-    st.image("https://github.com/dicodingacademy/assets/raw/main/logo.png")
+    # Menambahkan logo  (i use my discord profile instead for temporary use)
+    st.image("https://raw.githubusercontent.com/nightowl17/Aplikasi-Login/refs/heads/main/lebron.svg")
     
     # Mengambil start_date & end_date dari date_input
     start_date, end_date = st.date_input(
