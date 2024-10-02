@@ -54,7 +54,8 @@ def create_rfm_df(df):
     return rfm_df
 
 # Load cleaned data
-all_df = pd.read_csv("all_data.csv")
+url ="https://raw.githubusercontent.com/nightowl17/Final_Project_Data_Analysis_Muhammad_Zharfan/refs/heads/main/Dashboard/all_data.csv"
+all_df = pd.read_csv(url)
 
 datetime_columns = ["order_purchase_timestamp", "order_delivered_customer_date"]
 all_df.sort_values(by="order_purchase_timestamp", inplace=True)
