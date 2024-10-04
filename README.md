@@ -24,3 +24,5 @@ this is how to run the app:
 streamlit run dashboard.py
 ```
 3. visual studio code will open on a new browser tab(chrome) showing the dashboard.py streamlit app
+4. or you can run them by opening link below in a browser (streamlit cloud link to the app):
+   https://finalprojectdataanalysismuhammadzharfan-kukgwkjfcmh4mlszysbdct.streamlit.app/
